@@ -50,7 +50,7 @@ void rm_host(char *hostToRm) {
     }
     fclose (file);
 
-    if (found == KH_FOUND) print_error("Specified host is not already known.");
+    if (found == KH_NOT_FOUND) print_error("Specified host is not already known.");
 
     file = get_file("w+");
     if (file == NULL) print_error("No opening known_hosts file.");
