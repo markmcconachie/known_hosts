@@ -1,5 +1,7 @@
+#include <stdio.h>
 #include <stdlib.h>
 
+#include "known_hosts.h"
 #include "commands.h"
 #include "display.h"
 #include "utils.h"
@@ -12,6 +14,8 @@ int main(int argc, char* argv[]) {
     } else if(arg_matches(argv[1], "rm")) {
         if (argc != 3) show_usage("Host required");
         rm_host(argv[2]);
+    } else if(arg_matches(argv[1], "version")) {
+        printf("Version "VERSION "\n");
     } else if(arg_matches(argv[1], "help")) {
         show_usage(argv[1]);
     } else {

@@ -17,9 +17,10 @@ void show_usage(char *option) {
 
     printf("\nusage: known_hosts command [host]\n");
     printf("  commands:\n");
-    printf("    ls   - List all known hosts\n");
-    printf("    rm   - Remove a host [requires host]\n");
-    printf("    help - Show this message\n");
+    printf("    ls      - List all known hosts\n");
+    printf("    rm      - Remove a host [requires host]\n");
+    printf("    version - Display current version\n");
+    printf("    help    - Show this message\n");
     printf("\n");
     exit(1);
 }
