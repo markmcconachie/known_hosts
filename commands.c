@@ -34,7 +34,7 @@ void rm_host(char *hostToRm) {
     int line_number = 0;
     int i;
 
-    int found = FALSE;
+    int found = KH_NOT_FOUND;
 
     while (fgets (line, sizeof(line), file) != NULL) {
         char host[MAX_HOST_LENGTH];
@@ -42,7 +42,7 @@ void rm_host(char *hostToRm) {
 
         if (strcmp(host, hostToRm) == 0) {
             printf(ANSI_COLOR_GREEN "Removing host: %s" ANSI_COLOR_RESET "\n", host);
-            found = 1;
+            found = KH_FOUND;
         } else {
             strncpy(lines[line_number], line, sizeof(line));
             line_number++;
@@ -50,7 +50,7 @@ void rm_host(char *hostToRm) {
     }
     fclose (file);
 
-    if (!found) print_error("Specified host is not already known.");
+    if (found == KH_FOUND) print_error("Specified host is not already known.");
 
     file = get_file("w+");
     if (file == NULL) print_error("No opening known_hosts file.");
