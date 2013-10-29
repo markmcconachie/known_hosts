@@ -10,4 +10,4 @@ install: all
 	install known_hosts $(DESTDIR)/$(PREFIX)/bin/
 
 clean:
-	rm -rf known_hosts
+	rm -rf known_hosts *.o
