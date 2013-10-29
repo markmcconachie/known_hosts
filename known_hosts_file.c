@@ -1,0 +1,16 @@
+#include <stdlib.h>
+#include <string.h>
+
+#include "known_hosts_file.h"
+
+static char* get_file_path() {
+    static char localfilename[80];
+    strcpy(localfilename,"");
+    strcat(localfilename, getenv("HOME"));
+    strcat(localfilename, KNOWN_HOSTS_PATH);
+    return localfilename;
+}
+
+FILE* get_file(char* mode) {
+    return fopen(get_file_path(), mode);
+}
