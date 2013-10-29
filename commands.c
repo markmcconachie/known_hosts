@@ -30,9 +30,11 @@ void rm_host(char *hostToRm) {
 
     char lines[MAX_LINES][MAX_LINE_LENGTH];
     char line[MAX_LINE_LENGTH];
+    
     int line_number = 0;
     int i;
-    int found = 0;
+
+    int found = FALSE;
 
     while (fgets (line, sizeof(line), file) != NULL) {
         char host[MAX_HOST_LENGTH];
