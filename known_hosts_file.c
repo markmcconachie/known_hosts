@@ -5,7 +5,7 @@
 
 static char* get_file_path() {
     static char localfilename[80];
-    strcpy(localfilename,"");
+    strncpy(localfilename,"", sizeof(char));
     strcat(localfilename, getenv("HOME"));
     strcat(localfilename, KNOWN_HOSTS_PATH);
     return localfilename;

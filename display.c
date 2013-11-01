@@ -13,14 +13,14 @@ void print_host(char *host) {
 }
 
 void show_usage(char *option) {
-    if (option != NULL) printf(ANSI_COLOR_RED "Unknown option: %s" ANSI_COLOR_RESET "\n", option);
+    if (option != NULL) 
+        printf(ANSI_COLOR_RED "Unknown option: %s" ANSI_COLOR_RESET "\n", option);
 
-    printf("\nusage: known_hosts command [host]\n");
-    printf("  commands:\n");
-    printf("    ls      - List all known hosts\n");
-    printf("    rm      - Remove a host [requires host]\n");
-    printf("    version - Display current version\n");
-    printf("    help    - Show this message\n");
-    printf("\n");
+    printf("\nusage: known_hosts command [host]\n"
+           "  commands:\n"
+           "    ls      - List all known hosts\n"
+           "    rm      - Remove a host [requires host]\n"
+           "    version - Display current version\n"
+           "    help    - Show this message\n\n");
     exit(1);
 }
