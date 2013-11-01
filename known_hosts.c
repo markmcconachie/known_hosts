@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
     } else if(arg_matches(argv[1], "version")) {
         printf("Version "VERSION "\n");
     } else if(arg_matches(argv[1], "help")) {
-        show_usage(argv[1]);
+        show_usage(NULL);
     } else {
         show_usage(argv[1]);
     }
