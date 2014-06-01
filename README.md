@@ -4,6 +4,15 @@ A simple cli known hosts manager
 
 ## Installation
 
+### OS X (Using homebrew)
+
+```
+brew update
+brew install known_hosts
+```
+
+### From source
+
 Clone this repo and run
 
 ```
