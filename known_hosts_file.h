@@ -4,4 +4,4 @@
 
 #include <stdio.h>
 
-FILE *get_file(char* mode); 
+FILE *get_file(char* mode);
