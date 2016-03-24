@@ -1,0 +1,2 @@
+#define KnownHosts_VERSION "@KnownHosts_VERSION@"
+#define KnownHosts_FILE_LOCATION "@KnownHosts_FILE_LOCATION@"

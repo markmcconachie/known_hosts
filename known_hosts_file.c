@@ -2,12 +2,13 @@
 #include <string.h>
 
 #include "known_hosts_file.h"
+#include "KnownHostsConfig.h"
 
 static char* get_file_path() {
     static char localfilename[80];
     strncpy(localfilename,"", sizeof(char));
     strcat(localfilename, getenv("HOME"));
-    strcat(localfilename, KNOWN_HOSTS_PATH);
+    strcat(localfilename, KnownHosts_FILE_LOCATION);
     return localfilename;
 }
 
