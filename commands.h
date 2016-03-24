@@ -1,5 +1,4 @@
-#ifndef _commands_h
-#define _commands_h
+#pragma once
 
 #define MAX_LINE_LENGTH 1024
 #define MAX_HOST_LENGTH 128
@@ -12,5 +11,3 @@ enum found_states {
 
 void commands_ls_hosts();
 void commands_rm_host(char *hostToRm);
-
-#endif
