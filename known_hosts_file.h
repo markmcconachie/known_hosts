@@ -5,6 +5,6 @@
 
 #include <stdio.h>
 
-FILE *get_file(char* mode);
+FILE *known_hosts_file_get(char *mode);
 
 #endif

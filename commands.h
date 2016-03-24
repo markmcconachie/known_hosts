@@ -10,7 +10,7 @@ enum found_states {
     KH_FOUND
 };
 
-void list_hosts();
-void rm_host(char *hostToRm);
+void commands_ls_hosts();
+void commands_rm_host(char *hostToRm);
 
 #endif

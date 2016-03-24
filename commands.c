@@ -5,12 +5,17 @@
 #include "commands.h"
 #include "known_hosts_file.h"
 #include "display.h"
-#include "utils.h"
 
-void list_hosts () {
-    FILE *file = get_file("r");
+void extract_host_from_string(char* host, char* line) {
+    size_t index = strchr(line, ' ') - line;
+    strncpy(host, line, index);
+    host[index] = '\0';
+}
+
+void commands_ls_hosts() {
+    FILE *file = known_hosts_file_get("r");
     if (file == NULL)
-        print_error("No known_hosts file found.");
+        display_error("No known_hosts file found.");
 
     puts("Current known hosts:");
 
@@ -18,16 +23,16 @@ void list_hosts () {
     while (fgets(line, sizeof(line), file) != NULL) {
         char host[MAX_HOST_LENGTH];
         extract_host_from_string(host, line);
-        print_host(host);
+        display_host(host);
     }
 
     fclose (file);
 }
 
-void rm_host(char *hostToRm) {
-    FILE *file = get_file("r");
+void commands_rm_host(char *hostToRm) {
+    FILE *file = known_hosts_file_get("r");
     if (file == NULL)
-        print_error("No known_hosts file found.");
+        display_error("No known_hosts file found.");
 
     char lines[MAX_LINES][MAX_LINE_LENGTH];
     char line[MAX_LINE_LENGTH];
@@ -52,11 +57,11 @@ void rm_host(char *hostToRm) {
     fclose(file);
 
     if (found == KH_NOT_FOUND)
-        print_error("Specified host is not already known.");
+        display_error("Specified host is not already known.");
 
-    file = get_file("w+");
+    file = known_hosts_file_get("w+");
     if (file == NULL)
-        print_error("Can't open known_hosts file.");
+        display_error("Can't open known_hosts file.");
 
     for(i = 0; i <= line_number; i++) {
         fprintf(file, "%s", lines[i]);
