@@ -1,2 +1,31 @@
+/**
+ * @file known_hosts_config.h
+ * @author Mark McConachie
+ * @date March 25 2016
+ * @brief Configuration
+ */
+
+/** Tool Version **/
 #define KnownHosts_VERSION "@KnownHosts_VERSION@"
+
+/** Location of the KnownHosts file **/
 #define KnownHosts_FILE_LOCATION "@KnownHosts_FILE_LOCATION@"
+
+/** Maximum length of each line in the hosts file **/
+#define MAX_LINE_LENGTH 1024
+
+/** Maximum length of a host name**/
+#define MAX_HOST_LENGTH 128
+
+/** Maximum number of hosts in the hosts file**/
+#define MAX_LINES 1024
+
+
+/** Displayed on the CLI to show success **/
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+
+/** Reset CLI output color to normal **/
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
+/** Displayed on the CLI to show failure **/
+#define ANSI_COLOR_RED     "\x1b[31m"

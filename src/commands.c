@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "../include/commands.h"
 #include "../include/known_hosts_file.h"
 #include "../include/display.h"
+#include "KnownHostsConfig.h"
 
 void extract_host_from_string(char* host, char* line) {
     size_t index = strchr(line, ' ') - line;

@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.4)
 project(known_hosts)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+add_definitions(-DUNICODE -D_UNICODE)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+add_definitions(-DUNICODE -D_UNICODE)
 set(KnownHosts_VERSION "1.0.0")
 set(KnownHosts_FILE_LOCATION" "/.ssh/known_hosts"")
 
