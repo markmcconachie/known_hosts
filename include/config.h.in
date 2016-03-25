@@ -6,19 +6,22 @@
  */
 
 /** Tool Version **/
-#define KnownHosts_VERSION "@KnownHosts_VERSION@"
+#define VERSION "@VERSION@"
 
 /** Location of the KnownHosts file **/
-#define KnownHosts_FILE_LOCATION "@KnownHosts_FILE_LOCATION@"
+#define KNOWN_HOSTS_FILE_PATH "@KNOWN_HOSTS_FILE_PATH@"
 
 /** Maximum length of each line in the hosts file **/
-#define MAX_LINE_LENGTH 1024
+#define MAX_LINE_LENGTH @MAX_LINE_LENGTH@
 
 /** Maximum length of a host name**/
-#define MAX_HOST_LENGTH 128
+#define MAX_HOST_LENGTH @MAX_HOST_LENGTH@
 
 /** Maximum number of hosts in the hosts file**/
-#define MAX_LINES 1024
+#define MAX_LINES @MAX_LINES@
+
+/** Maximum length the known_hosts file path **/
+#define MAX_FILE_PATH_LENGTH @MAX_FILE_PATH_LENGTH@
 
 
 /** Displayed on the CLI to show success **/

@@ -5,8 +5,13 @@ add_definitions(-DUNICODE -D_UNICODE)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 add_definitions(-DUNICODE -D_UNICODE)
-set(KnownHosts_VERSION "1.0.0")
-set(KnownHosts_FILE_LOCATION "/.ssh/known_hosts")
+
+set(VERSION "1.0.0")
+set(KNOWN_HOSTS_FILE_PATH "/.ssh/known_hosts")
+set(MAX_LINE_LENGTH 1024)
+set(MAX_HOST_LENGTH 128)
+set(MAX_LINES 1024)
+set(MAX_FILE_PATH_LENGTH 128)
 
 configure_file(
         "include/config.h.in"

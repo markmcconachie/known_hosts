@@ -5,10 +5,10 @@
 #include "config.h"
 
 static char *get_file_path() {
-    static char localfilename[80];
+    static char localfilename[MAX_FILE_PATH_LENGTH];
     strncpy(localfilename, "", sizeof(char));
     strcat(localfilename, getenv("HOME"));
-    strcat(localfilename, KnownHosts_FILE_LOCATION);
+    strcat(localfilename, KNOWN_HOSTS_FILE_PATH);
     return localfilename;
 }
 
