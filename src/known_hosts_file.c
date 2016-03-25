@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "known_hosts_file.h"
+#include "../include/known_hosts_file.h"
 #include "KnownHostsConfig.h"
 
 static char* get_file_path() {

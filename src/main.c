@@ -2,8 +2,8 @@
 #include <string.h>
 
 #include "KnownHostsConfig.h"
-#include "commands.h"
-#include "display.h"
+#include "../include/commands.h"
+#include "../include/display.h"
 
 int arg_matches(char* arg, char* command) {
     return strcmp(arg, command) == 0;

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "display.h"
+#include "../include/display.h"
 
 void display_error(char *error) {
     printf(ANSI_COLOR_RED "ERROR: %s" ANSI_COLOR_RESET "\n", error);

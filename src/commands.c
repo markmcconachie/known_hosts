@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "commands.h"
-#include "known_hosts_file.h"
-#include "display.h"
+#include "../include/commands.h"
+#include "../include/known_hosts_file.h"
+#include "../include/display.h"
 
 void extract_host_from_string(char* host, char* line) {
     size_t index = strchr(line, ' ') - line;
