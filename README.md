@@ -13,11 +13,19 @@ brew install known_hosts
 
 ### From source
 
+### Requirments
+
+You must have cmake installed.
+
+### Install
+
 Clone this repo and run
 
 ```
-make
-sudo make install
+mkdir build
+cd build
+cmake ..
+make && make install
 ```
 
 ## Usage
