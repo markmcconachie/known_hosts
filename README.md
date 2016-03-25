@@ -1,6 +1,6 @@
 #Known Hosts
 
-A simple cli known hosts manager
+A simple cli ssh **known_hosts** manager
 
 ## Installation
 
