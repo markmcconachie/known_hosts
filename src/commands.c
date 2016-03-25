@@ -1,38 +1,42 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 #include "commands.h"
-#include "known_hosts.h"
 #include "known_hosts_file.h"
+#include "config.h"
 #include "display.h"
-#include "utils.h"
 
-void list_hosts () {
-    FILE *file = get_file("r");
-    if (file == NULL) 
-        print_error("No known_hosts file found.");
-    
+void extract_host_from_string(char *host, char *line) {
+    size_t index = strchr(line, ' ') - line;
+    strncpy(host, line, index);
+    host[index] = '\0';
+}
+
+void commands_ls_hosts() {
+    FILE *file = known_hosts_file_get("r");
+    if (file == NULL)
+        display_error("No known_hosts file found.");
+
     puts("Current known hosts:");
 
     char line[MAX_LINE_LENGTH];
     while (fgets(line, sizeof(line), file) != NULL) {
         char host[MAX_HOST_LENGTH];
         extract_host_from_string(host, line);
-        print_host(host);
+        display_host(host);
     }
 
-    fclose (file);
+    fclose(file);
 }
 
-void rm_host(char *hostToRm) {
-    FILE *file = get_file("r");
-    if (file == NULL) 
-        print_error("No known_hosts file found.");
+void commands_rm_host(char *hostToRm) {
+    FILE *file = known_hosts_file_get("r");
+    if (file == NULL)
+        display_error("No known_hosts file found.");
 
     char lines[MAX_LINES][MAX_LINE_LENGTH];
     char line[MAX_LINE_LENGTH];
-    
+
     int line_number = 0;
     int i;
 
@@ -48,18 +52,18 @@ void rm_host(char *hostToRm) {
         } else {
             strncpy(lines[line_number], line, sizeof(line));
             line_number++;
-        }    
+        }
     }
     fclose(file);
 
-    if (found == KH_NOT_FOUND) 
-        print_error("Specified host is not already known.");
+    if (found == KH_NOT_FOUND)
+        display_error("Specified host is not already known.");
 
-    file = get_file("w+");
-    if (file == NULL) 
-        print_error("Can't open known_hosts file.");
+    file = known_hosts_file_get("w+");
+    if (file == NULL)
+        display_error("Can't open known_hosts file.");
 
-    for(i = 0; i <= line_number; i++) {
+    for (i = 0; i <= line_number; i++) {
         fprintf(file, "%s", lines[i]);
     }
     fclose(file);
