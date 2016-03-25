@@ -1,5 +1,2 @@
-known_hosts
-*.o
-known_hosts.dSYM
 .idea
 build
