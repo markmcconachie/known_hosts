@@ -6,6 +6,9 @@ A simple cli ssh **known_hosts** manager
 
 ### OS X (Using homebrew)
 
+The version available from homebrew is not the most current.
+*I will update this later.*
+
 ```
 brew update
 brew install known_hosts
@@ -13,17 +16,20 @@ brew install known_hosts
 
 ### From source
 
-### Requirments
+#### Requirments
 
 You must have cmake installed.
 
-### Install
+```
+brew install cmake
+```
+
+#### Install
 
 Clone this repo and run
 
 ```
-mkdir build
-cd build
+mkdir build && cd build
 cmake ..
 make && make install
 ```
