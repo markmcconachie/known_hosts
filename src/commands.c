@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "../include/commands.h"
-#include "../include/known_hosts_file.h"
-#include "../include/display.h"
-#include "KnownHostsConfig.h"
+#include "commands.h"
+#include "known_hosts_file.h"
+#include "config.h"
+#include "display.h"
 
-void extract_host_from_string(char* host, char* line) {
+void extract_host_from_string(char *host, char *line) {
     size_t index = strchr(line, ' ') - line;
     strncpy(host, line, index);
     host[index] = '\0';
@@ -26,7 +26,7 @@ void commands_ls_hosts() {
         display_host(host);
     }
 
-    fclose (file);
+    fclose(file);
 }
 
 void commands_rm_host(char *hostToRm) {
@@ -63,7 +63,7 @@ void commands_rm_host(char *hostToRm) {
     if (file == NULL)
         display_error("Can't open known_hosts file.");
 
-    for(i = 0; i <= line_number; i++) {
+    for (i = 0; i <= line_number; i++) {
         fprintf(file, "%s", lines[i]);
     }
     fclose(file);

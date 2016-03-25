@@ -7,8 +7,6 @@
 
 #pragma once
 
-#include "KnownHostsConfig.h"
-
 /**
  * @brief Display an error
  *

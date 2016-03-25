@@ -6,11 +6,11 @@ add_definitions(-DUNICODE -D_UNICODE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 add_definitions(-DUNICODE -D_UNICODE)
 set(KnownHosts_VERSION "1.0.0")
-set(KnownHosts_FILE_LOCATION" "/.ssh/known_hosts"")
+set(KnownHosts_FILE_LOCATION "/.ssh/known_hosts")
 
 configure_file (
-        "include/KnownHostsConfig.h.in"
-        "${PROJECT_BINARY_DIR}/KnownHostsConfig.h"
+        "include/config.h.in"
+        "${PROJECT_BINARY_DIR}/config.h"
 )
 
 include_directories(include)

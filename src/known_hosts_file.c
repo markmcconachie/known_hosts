@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../include/known_hosts_file.h"
-#include "KnownHostsConfig.h"
+#include "known_hosts_file.h"
+#include "config.h"
 
 static char* get_file_path() {
     static char localfilename[80];
