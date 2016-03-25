@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <MacTypes.h>
 
 #include "commands.h"
 #include "known_hosts_file.h"
@@ -29,6 +30,21 @@ void commands_ls_hosts() {
     fclose(file);
 }
 
+int hostOrIpMatches(char *host, char *hostToRm) {
+    const char separator[2] = ",";
+
+    char *hostname = strtok(host, separator);
+    char *ip = strtok(NULL, separator);
+
+    int hostnameMatched = (strcmp(hostname, hostToRm) == 0);
+
+    int ipMatched = false;
+    if (ip != NULL)
+        ipMatched = (strcmp(ip, hostToRm) == 0);
+
+    return (hostnameMatched || ipMatched);
+}
+
 void commands_rm_host(char *hostToRm) {
     FILE *file = known_hosts_file_get("r");
     if (file == NULL)
@@ -46,7 +62,7 @@ void commands_rm_host(char *hostToRm) {
         char host[MAX_HOST_LENGTH];
         extract_host_from_string(host, line);
 
-        if (strcmp(host, hostToRm) == 0) {
+        if (hostOrIpMatches(host, hostToRm)) {
             printf(ANSI_COLOR_GREEN "Removing host: %s" ANSI_COLOR_RESET "\n", host);
             found = KH_FOUND;
         } else {
