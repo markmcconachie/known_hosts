@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <string.h>
+#ifdef __APPLE__
 #include <MacTypes.h>
+#else
+#define false 0
+#endif
 
 #include "commands.h"
 #include "known_hosts_file.h"
