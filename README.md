@@ -1,4 +1,4 @@
-#Known Hosts
+# Known Hosts
 
 A simple cli ssh **known_hosts** manager
 
