@@ -4,16 +4,16 @@
 #include "display.h"
 #include "config.h"
 
-void display_error(char *error) {
+void display_error(const char *error) {
     printf(ANSI_COLOR_RED "ERROR: %s" ANSI_COLOR_RESET "\n", error);
     exit(1);
 }
 
-void display_host(char *host) {
+void display_host(const char *host) {
     printf("\t" ANSI_COLOR_GREEN "%s" ANSI_COLOR_RESET "\n", host);
 }
 
-void display_usage(char *option) {
+void display_usage(const char *option) {
     if (option != NULL)
         printf(ANSI_COLOR_RED "Unknown option: %s" ANSI_COLOR_RESET "\n", option);
 

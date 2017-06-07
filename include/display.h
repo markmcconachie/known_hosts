@@ -13,18 +13,18 @@
  * Print an error to STDOUT in red
  * @warning This will also exit the program as errors are considered fatal!
  */
-void display_error(char *error);
+void display_error(const char *error);
 
 /**
  * @brief Display a host
  *
  * Prints a formatted host to STDOUT
  */
-void display_host(char *host);
+void display_host(const char *host);
 
 /**
  * @brief Display usage
  *
  * Displays usage for the CLI
  */
-void display_usage(char *option);
+void display_usage(const char *option);

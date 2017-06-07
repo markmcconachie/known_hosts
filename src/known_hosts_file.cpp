@@ -12,6 +12,6 @@ static char *get_file_path() {
     return localfilename;
 }
 
-FILE *known_hosts_file_get(char *mode) {
+FILE *known_hosts_file_get(const char *mode) {
     return fopen(get_file_path(), mode);
 }

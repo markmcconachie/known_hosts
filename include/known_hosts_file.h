@@ -14,4 +14,4 @@
  *
  * @param mode the mode to open the file with
  */
-FILE *known_hosts_file_get(char *mode);
+FILE *known_hosts_file_get(const char *mode);

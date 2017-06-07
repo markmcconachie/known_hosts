@@ -22,7 +22,7 @@ include_directories(include)
 include_directories("${PROJECT_BINARY_DIR}")
 
 
-set(SOURCES src/main.c src/display.c src/commands.c src/known_hosts_file.c)
+set(SOURCES src/main.cpp src/display.cpp src/commands.cpp src/known_hosts_file.cpp)
 add_executable(known_hosts ${SOURCES})
 
 install(TARGETS known_hosts DESTINATION bin)
