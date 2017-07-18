@@ -11,10 +11,15 @@
 #include "config.h"
 #include "display.h"
 
-void extract_host_from_string(char *host, char *line) {
+int extract_host_from_string(char *host, char *line) {
     size_t index = strchr(line, ' ') - line;
+    if (index > 128) {
+            printf("Index out of bounds for host: %s - Skipping\n", host);
+            return 128;
+    }
     strncpy(host, line, index);
     host[index] = '\0';
+    return 0;
 }
 
 void commands_ls_hosts() {
